@@ -2,7 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  colorMode: {
+    preference: 'light',
+  },
   modules: [
+    '@unocss/nuxt',
     '@nuxt/ui',
     [
       '@pinia/nuxt',
@@ -11,4 +15,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  // vite: {
+  //   optimizeDeps: {
+  //     force: true,
+  //   },
+  // },
 })

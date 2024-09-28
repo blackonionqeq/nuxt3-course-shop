@@ -1,75 +1,22 @@
-# Nuxt 3 Minimal Starter
+# Nuxt3开发的商城项目
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 特点
+前后端同构、docker、ORM
 
-## Setup
+## 开发
+遵循Nuxt的架构，前端入口是app.vue，排版页在layouts中，业务内容在pages中；后端内容放server目录下；
 
-Make sure to install the dependencies:
+### 关于后端的一些补充说明
+可具体分为api层（server/api目录下）、数据库ORM层（server/database）。
 
-```bash
-# npm
-npm install
+另外需要注意，后端的报错信息需要在终端查看，前端默认是看不到的。
 
-# pnpm
-pnpm install
+### 开发流程
+1. 打开docker desktop
+2. 终端执行docker compose up -d
+3. (可选)docker启动后，在localhost:8080通过adminer查看数据库内容
+4. pnpm dev -o
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### trobleshooting
+遇到前端报错（例如说找不到/pages/xxx.vue），先去终端看是不是有该文件的报错（编译校验不通过，导致没往下走，就没有结果了，所以找不到）；
+遇到后端报错（例如500，来自h3的报错），先去看终端的后端报错。后端编译时如果报错，很可能就没往下走了，这时接口都会报500；
